@@ -25,10 +25,12 @@
       display: flex;
       justify-content: space-between;
       padding: 60px 80px;
+      flex-wrap: wrap;
     }
 
     .left {
       width: 50%;
+      min-width: 300px;
     }
 
     .left h2 {
@@ -43,7 +45,9 @@
 
     .right {
       width: 50%;
+      min-width: 300px;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
     }
@@ -52,13 +56,39 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 300px;
-      height: 300px;
+      width: 270px;
+      height: 270px;
     }
 
     .qr-box img {
       width: 100%;
       height: auto;
+    }
+
+    .qr-text {
+      margin-top: 15px;
+      font-size: 14px;
+      font-family: 'Arial', sans-serif;
+      color: #007aff;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+      }
+
+      .left, .right {
+        width: 100%;
+        text-align: center;
+      }
+
+      .left p {
+        margin: 0 auto;
+      }
     }
   </style>
 </head>
@@ -78,6 +108,9 @@
     <div class="right">
       <div class="qr-box">
         <img src="qr.png" alt="Código QR para iniciar sesión" />
+      </div>
+      <div class="qr-text">
+        Con la cámara de su teléfono
       </div>
     </div>
   </div>
